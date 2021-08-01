@@ -22,7 +22,7 @@ export default {
         const fuckingPassword = await bcrypt.hash(password, 10);
 
         // note. save and return the user.
-        return client.user.create({
+        await client.user.create({
           data: {
             username,
             email,
@@ -31,10 +31,15 @@ export default {
             password: fuckingPassword,
           },
         });
-
+        return {
+          ok: true,
+        };
         // note. login
       } catch (sexyError) {
-        return sexyError;
+        return {
+          ok: false,
+          error: "Can't create account.",
+        };
       }
     },
   },
