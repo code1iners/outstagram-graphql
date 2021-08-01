@@ -18,7 +18,9 @@ export default {
         },
         { loggedInUser }
       ) => {
-        console.log(avatar);
+        const { filename, createReadStream } = await avatar;
+        const stream = createReadStream();
+        console.log(filename, stream);
         let hashedPassword = null;
         if (newPassword) {
           hashedPassword = await bcrypt.hash(newPassword, 10);
