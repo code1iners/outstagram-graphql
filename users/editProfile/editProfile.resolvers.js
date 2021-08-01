@@ -1,3 +1,4 @@
+import { createWriteStream } from "fs";
 import bcrypt from "bcrypt";
 import client from "../../client";
 import { protectedResolver } from "../users.utils";
@@ -19,8 +20,11 @@ export default {
         { loggedInUser }
       ) => {
         const { filename, createReadStream } = await avatar;
-        const stream = createReadStream();
-        console.log(filename, stream);
+        const readStream = createReadStream();
+        const writeStream = createWriteStream(
+          `${process.cwd()}/uploads/${filename}`
+        );
+        readStream.pipe(writeStream);
         let hashedPassword = null;
         if (newPassword) {
           hashedPassword = await bcrypt.hash(newPassword, 10);
