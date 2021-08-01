@@ -6,7 +6,7 @@ export default {
     editProfile: protectedResolver(
       async (
         _,
-        { firstName, lastName, username, email, password: newPassword },
+        { firstName, lastName, username, email, password: newPassword, bio },
         { loggedInUser, protectResolver }
       ) => {
         protectResolver(loggedInUser);
@@ -24,6 +24,7 @@ export default {
             lastName,
             username,
             email,
+            bio,
             ...(hashedPassword && { password: hashedPassword }),
           },
         });
