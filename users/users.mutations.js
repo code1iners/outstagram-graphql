@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import client from "../client";
+import jwt from "jsonwebtoken";
 
 export default {
   Mutation: {
@@ -58,6 +59,11 @@ export default {
         };
       }
       // note. issue a token and send it to the user.
+      const token = await jwt.sign({ id: user.id }, process.env.SECRET_KEY);
+      return {
+        ok: true,
+        token,
+      };
     },
   },
 };
