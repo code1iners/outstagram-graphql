@@ -14,7 +14,7 @@ Outstagram Backend.
 - [x] See Followers.
 - [x] See Following.
 - [x] Computed fields.
-- [ ] Search Users.
+- [x] Search Users.
 
 ## Photos
 
