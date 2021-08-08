@@ -19,11 +19,9 @@ export default {
         return false;
       }
 
-      return Boolean(
-        client.user.count({
-          where: { id: loggedInUser.id, following: { some: { id } } },
-        })
-      );
+      return client.user.count({
+        where: { id: loggedInUser.id, following: { some: { id } } },
+      });
     },
   },
 };
