@@ -5,10 +5,10 @@ export default {
   Mutation: {
     unfollowUser: protectedResolver(
       async (_, { username }, { loggedInUser }) => {
-        const exists = client.user.findUnique({
+        const targetUser = client.user.findUnique({
           where: { username },
         });
-        if (!exists) {
+        if (!targetUser) {
           return {
             ok: false,
             error: "The user does not found.",

@@ -4,12 +4,12 @@ import { protectedResolver } from "../users.utils";
 export default {
   Mutation: {
     followUser: protectedResolver(async (_, { username }, { loggedInUser }) => {
-      const ok = client.user.findUnique({
+      const targetUser = client.user.findUnique({
         where: {
           username,
         },
       });
-      if (!ok) {
+      if (!targetUser) {
         return {
           ok: false,
           error: "The user does not found.",
