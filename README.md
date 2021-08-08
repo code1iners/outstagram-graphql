@@ -10,7 +10,7 @@ Outstagram Backend.
 - [x] Edit Profile.
 - [x] Change Avatar (Image Upload).
 - [x] Follow User.
-- [x] Unfollow User.
+- [x] Un-follow User.
 - [x] See Followers.
 - [x] See Following.
 - [x] Computed fields.
@@ -18,7 +18,17 @@ Outstagram Backend.
 
 ## Photos
 
-- [ ] See Photo
-- [ ] Upload Photo
-- [ ] Edit Photo
-- [ ] Like / Unlike Photo
+- [ ] Upload Photo.
+- [ ] Like / Unlike Photo.
+- [ ] See Photo.
+- [ ] Edit Photo.
+- [ ] See Photo Likes.
+- [ ] See Feed.
+- [ ] Search Photos.
+- [ ] See Hashtags.
+
+## Comments
+
+- [ ] Comment on Photo.
+- [ ] Edit Comment.
+- [ ] Delete Comment.
