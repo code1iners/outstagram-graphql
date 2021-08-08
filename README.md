@@ -11,7 +11,7 @@ Outstagram Backend.
 - [x] Change Avatar (Image Upload).
 - [x] Follow User.
 - [x] Unfollow User.
-- [ ] See Followers.
+- [x] See Followers.
 - [ ] See Following.
 - [ ] Search Users.
 
