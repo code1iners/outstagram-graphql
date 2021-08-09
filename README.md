@@ -18,8 +18,8 @@ Outstagram Backend.
 
 ## Photos
 
-- [ ] Upload Photo.
-- [ ] See Photo.
+- [x] Upload Photo.
+- [x] See Photo.
 - [ ] See Hashtags.
 - [ ] Search Photos.
 - [ ] Edit Photo.
