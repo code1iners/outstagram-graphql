@@ -11,9 +11,9 @@ export default gql`
     updatedAt: String!
     bio: String
     avatar: String
+    photos(lastPhotoId: Int): [Photo]
     followers: [User]
     following: [User]
-    photos: [Photo]
     totalFollowing: Int!
     totalFollowers: Int!
     isMe: Boolean!

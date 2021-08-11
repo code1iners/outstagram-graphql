@@ -23,5 +23,13 @@ export default {
         where: { id: loggedInUser.id, following: { some: { id } } },
       });
     },
+    photos: ({ id }, { lastPhotoId }) => {
+      return client.photo.findMany({
+        where: { userId: id },
+        take: 5,
+        skip: lastPhotoId ? 1 : 0,
+        ...(lastPhotoId && { cursor: { id: lastPhotoId } }),
+      });
+    },
   },
 };
