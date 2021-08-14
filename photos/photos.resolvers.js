@@ -6,6 +6,7 @@ export default {
     hashtags: ({ id }) =>
       client.hashtag.findMany({ where: { photos: { some: { id } } } }),
     likes: ({ id }) => client.like.count({ where: { photoId: id } }),
+    comments: ({ id }) => client.comment.count({ where: { photoId: id } }),
   },
   Hashtag: {
     photos: ({ id }, { lastPhotoId }) => {
