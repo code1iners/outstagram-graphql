@@ -46,7 +46,8 @@ Outstagram Backend.
 
 ## Direct Messages
 
+- [x] See Rome
+- [x] Send Message
 - [ ] Create Room
 - [ ] Get Room
-- [ ] Send Message
 - [ ] Realtime Messages
