@@ -27,13 +27,14 @@ Outstagram Backend.
 - [x] See Photo Likes.
 - [x] See Feed.
 - [x] See Photo Comments.
-- [ ] Is Mine (Delete Photo)
+- [x] Is Mine (Delete Photo)
+- [ ] Delete Photo.
 
 ## Comments
 
 - [x] Comment on Photo.
+- [ ] Delete Comment.
 - [ ] Edit Comment.
-- [ ] Delete Comment (Is Mine).
 
 ## Extras
 

@@ -7,6 +7,8 @@ export default {
       client.hashtag.findMany({ where: { photos: { some: { id } } } }),
     likes: ({ id }) => client.like.count({ where: { photoId: id } }),
     comments: ({ id }) => client.comment.count({ where: { photoId: id } }),
+    isMine: ({ userId }, _, { loggedInUser }) =>
+      loggedInUser ? userId === loggedInUser.id : false,
   },
   Hashtag: {
     photos: ({ id }, { lastPhotoId }) => {
