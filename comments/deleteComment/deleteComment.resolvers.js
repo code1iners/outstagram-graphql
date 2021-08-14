@@ -21,11 +21,11 @@ export default {
         };
       } else {
         await client.comment.delete({ where: { id } });
-      }
 
-      return {
-        ok: true,
-      };
+        return {
+          ok: true,
+        };
+      }
     }),
   },
 };
