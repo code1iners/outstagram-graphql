@@ -2,7 +2,7 @@
 
 Outstagram Backend.
 
-## User:
+## User
 
 - [x] Create Account.
 - [x] See Profile.
@@ -27,7 +27,7 @@ Outstagram Backend.
 - [x] See Photo Likes.
 - [x] See Feed.
 - [x] See Photo Comments.
-- [x] Is Mine (Delete Photo)
+- [x] Is Mine (Delete Photo).
 - [x] Delete Photo.
 
 ## Comments
@@ -42,12 +42,13 @@ Outstagram Backend.
 
 ## Extras
 
-- [x] S3 Image Upload
+- [x] S3 Image Upload.
 
 ## Direct Messages
 
-- [x] See Rome
-- [x] Send Message
-- [ ] Create Room
-- [ ] Get Room
-- [ ] Realtime Messages
+- [x] See Rooms.
+- [x] Send Message.
+- [x] See Room.
+- [x] Computed Fields.
+- [x] See (Read) Messages.
+- [ ] Realtime Messages.
