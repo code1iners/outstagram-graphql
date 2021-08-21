@@ -7,18 +7,38 @@ import { resolvers, typeDefs } from "./schema";
 import { getUser, protectedResolver } from "./users/users.utils";
 import { graphqlUploadExpress } from "graphql-upload";
 import pubsub from "./pubsub";
+import { log } from "console";
 
 const PORT = process.env.PORT;
 const apollo = new ApolloServer({
   typeDefs,
   resolvers,
-  context: async ({ req }) => {
-    if (req) {
+  context: async (ctx) => {
+    if (ctx.req) {
       return {
-        loggedInUser: await getUser(req.headers.authorization),
+        loggedInUser: await getUser(ctx.req.headers.authorization),
         protectedResolver,
       };
+    } else {
+      const {
+        connection: { context },
+      } = ctx;
+      return {
+        loggedInUser: context.loggedInUser,
+      };
     }
+  },
+  subscriptions: {
+    onConnect: async ({ Authorization }) => {
+      if (!Authorization) {
+        throw new Error("You can't listen.");
+      }
+
+      const loggedInUser = await getUser(Authorization);
+      return {
+        loggedInUser,
+      };
+    },
   },
 });
 

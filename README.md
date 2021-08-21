@@ -51,4 +51,4 @@ Outstagram Backend.
 - [x] See Room.
 - [x] Computed Fields.
 - [x] See (Read) Messages.
-- [ ] Realtime Messages.
+- [x] Realtime Messages.
