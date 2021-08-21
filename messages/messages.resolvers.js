@@ -23,4 +23,17 @@ export default {
       });
     },
   },
+  Message: {
+    user: ({ id }) => client.message.findUnique({ where: { id } }).user(),
+    isMine: async ({ id }, __, { loggedInUser }) => {
+      const foundMessage = await client.message.findFirst({
+        where: {
+          id,
+          userId: loggedInUser.id,
+        },
+        select: { id: true },
+      });
+      return foundMessage ? true : false;
+    },
+  },
 };
