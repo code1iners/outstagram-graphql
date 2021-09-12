@@ -8,7 +8,6 @@ export default {
     totalFollowers: ({ id }) =>
       client.user.count({ where: { following: { some: { id } } } }),
     isMe: ({ id }, _, { loggedInUser }) => {
-      console.log(id, loggedInUser);
       if (!loggedInUser) {
         return false;
       }
